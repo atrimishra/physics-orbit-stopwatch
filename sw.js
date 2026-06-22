@@ -1,7 +1,7 @@
 // Service Worker for Atri's Physics Orbit Stopwatch (Standalone App)
 // Enables offline access by caching the app shell
 
-const CACHE_NAME = "physics-orbit-stopwatch-v1";
+const CACHE_NAME = "physics-orbit-stopwatch-v2";
 const ASSETS_TO_CACHE = [
   "./index.html",
   "./manifest.json",
