@@ -148,14 +148,6 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
       Formula Cards
     </button>
-    <button id="shareBtn" class="btn-secondary px-5 py-2.5 rounded-xl font-bold text-xs items-center gap-2 inline-flex">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-      Share Progress
-    </button>
-    <button id="historyBtn" class="btn-secondary px-5 py-2.5 rounded-xl font-bold text-xs items-center gap-2 inline-flex">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l4 2"/></svg>
-      History
-    </button>
     <button id="badgesBtn" class="btn-secondary px-5 py-2.5 rounded-xl font-bold text-xs items-center gap-2 inline-flex">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg>
       <span>Badges</span>
@@ -165,10 +157,6 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m11 0h3a2 2 0 0 0 2-2v-3"/></svg>
       Focus Mode
       <span id="proLockIcon" class="text-[9px] bg-amber-100 text-amber-700 rounded-full px-1.5">PRO</span>
-    </button>
-    <button id="appLockBtn" class="btn-secondary px-5 py-2.5 rounded-xl font-bold text-xs items-center gap-2 inline-flex">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span id="appLockLabel">App Lock: Off</span>
     </button>
     <button id="settingsBtn" class="btn-secondary w-10 h-10 rounded-full flex items-center justify-center" title="Settings">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -303,7 +291,6 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E56FC" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/></svg>
       Session Log
     </h3>
-    <div id="subjectBreakdown" class="flex flex-col gap-1.5 mb-1"></div>
     <div id="sessionLog" class="flex flex-col gap-2 overflow-y-auto max-h-48 text-sm">
       <p class="text-slate-400 text-xs" id="emptyLogMsg">No sessions logged yet today. Start the stopwatch and hit "Save session" when you finish a focus block.</p>
     </div>
@@ -460,14 +447,6 @@ e.g.
         <div class="switch" id="autoDarkSwitch"><div class="switch-knob"></div></div>
       </div>
 
-      <div class="flex items-center justify-between">
-        <div>
-          <div class="text-sm font-semibold">20-20-20 Eye Break</div>
-          <div class="text-[11px] text-slate-400">Every 20 min of running timer, reminds you to look 20 feet away for 20 seconds</div>
-        </div>
-        <div class="switch" id="eyeBreakSwitch"><div class="switch-knob"></div></div>
-      </div>
-
       <div class="border-t border-slate-100 pt-4">
         <div class="text-sm font-semibold mb-2">Accent Theme</div>
         <div class="flex items-center gap-3 flex-wrap" id="themeSwatches"></div>
@@ -496,41 +475,15 @@ e.g.
         </div>
       </div>
 
-      <div class="border-t border-slate-100 pt-4">
-        <div class="text-sm font-semibold mb-2">Fix Today's Total</div>
-        <p class="text-[11px] text-slate-400 mb-3">Agar background/gap ki wajah se aaj ka total galat ho gaya hai, yahan se currently selected subject ka time seedha correct kar do.</p>
-        <div class="flex items-center gap-2">
-          <button id="editTodayBtn" class="btn-secondary flex-1 py-2.5 rounded-xl font-bold text-xs">✏️ Set Correct Time</button>
-          <button id="resetTodayBtn" class="btn-danger flex-1 py-2.5 rounded-xl font-bold text-xs">↺ Reset to 0</button>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
 
 <!-- FOCUS MODE OVERLAY -->
 <div id="focusOverlay" class="hidden fixed inset-0 z-[1200] flex flex-col items-center justify-center" style="background:radial-gradient(circle at 50% 40%,#142F9E,#070a14);">
-  <div class="absolute top-6 right-6 flex items-center gap-4">
-    <label class="flex items-center gap-2 text-white/60 text-[10px] font-bold uppercase tracking-wide cursor-pointer select-none">
-      <div class="switch" id="lockModeSwitch" style="width:34px;height:20px;"><div class="switch-knob" style="width:14px;height:14px;top:3px;left:3px;"></div></div>
-      🔒 Lock
-    </label>
-    <button id="exitFocusBtn" class="relative overflow-hidden text-white/60 hover:text-white text-xs font-bold uppercase tracking-wide flex items-center gap-2 px-2 py-1">
-      <span id="exitFocusHoldBar" class="absolute inset-0 bg-white/20 origin-left scale-x-0" style="transition:none;"></span>
-      <span id="exitFocusLabel" class="relative">Exit Focus</span>
-      <svg class="relative" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div id="lockReminderBadge" class="hidden absolute top-6 left-6 text-[10px] font-bold uppercase tracking-wide bg-red-500/20 text-red-300 px-3 py-1.5 rounded-full">🔒 Locked — hold Exit 1.5s to leave</div>
-
-  <div id="distractionOverlay" class="hidden absolute inset-0 z-[1300] flex flex-col items-center justify-center text-center px-6" style="background:rgba(7,10,20,0.92);backdrop-filter:blur(6px);">
-    <div class="text-4xl mb-3">😤</div>
-    <div class="text-white text-lg font-extrabold mb-2">Aap beech mein chale gaye the!</div>
-    <div class="text-white/60 text-sm mb-1" id="distractionCountText">Distractions this session: 1</div>
-    <div class="text-white/40 text-xs mb-6">Screen lock on hai — wapas focus pe aa jao 💪</div>
-    <button id="resumeFocusBtn" class="px-8 py-3 rounded-2xl font-bold text-sm bg-white text-[#142F9E]">Resume Focus</button>
-  </div>
+  <button id="exitFocusBtn" class="absolute top-6 right-6 text-white/60 hover:text-white text-xs font-bold uppercase tracking-wide flex items-center gap-2">
+    Exit Focus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
   <div id="focusPhaseLabel" class="text-white/50 text-xs font-bold uppercase tracking-wide mb-3">Deep Focus</div>
   <div class="digit-display mono font-bold text-center select-none leading-none text-white" style="font-size:clamp(3rem,12vw,7rem);">
     <span id="focusDispH">00</span><span class="text-white/30">:</span><span id="focusDispM">00</span><span class="text-white/30">:</span><span id="focusDispS">00</span>
@@ -539,28 +492,6 @@ e.g.
   <div class="flex items-center gap-3 mt-8">
     <button id="focusPauseBtn" class="px-8 py-3 rounded-2xl font-bold text-sm bg-white/10 text-white hover:bg-white/20 transition-all">Pause</button>
     <button id="focusLapBtn" class="px-8 py-3 rounded-2xl font-bold text-sm bg-white/10 text-white hover:bg-white/20 transition-all">Lap</button>
-  </div>
-</div>
-
-<!-- APP LOCK REMINDER OVERLAY -->
-<div id="appLockOverlay" class="hidden fixed inset-0 z-[1300] flex flex-col items-center justify-center text-center px-6" style="background:rgba(11,17,32,0.92);backdrop-filter:blur(6px);">
-  <div class="text-5xl mb-4">🔒</div>
-  <div class="text-white text-lg font-extrabold mb-2">App Lock is ON</div>
-  <div class="text-white/60 text-sm mb-6 max-w-xs">Aap focus session ke beech mein ho. Wapas aa jao ya lock band karo settings se.</div>
-  <button id="reenterFocusBtn" class="btn-primary px-8 py-3 rounded-2xl font-bold text-sm">I'm back — Resume Focus</button>
-</div>
-
-<!-- HISTORY MODAL -->
-<div class="modal-overlay" id="historyModal">
-  <div class="modal-box" style="max-width:520px;">
-    <div class="flex items-center justify-between mb-5">
-      <h3 class="text-lg font-extrabold">📅 Study History</h3>
-      <button class="closeModalBtn text-slate-400 hover:text-slate-700" data-modal="historyModal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <p class="text-xs text-slate-400 mb-4">Har din ka data yahan automatically save rehta hai — app band karo ya phone off karo, kuch nahi jaata.</p>
-    <div id="historyList" class="flex flex-col gap-2 max-h-96 overflow-y-auto pr-1"></div>
   </div>
 </div>
 
@@ -617,17 +548,7 @@ e.g.
 (function(){
   "use strict";
 
-  // BUG FIX: toISOString() is UTC-based, which misattributes late-night/early-morning
-  // sessions (e.g. 12:00am-5:30am IST) to the wrong calendar day. localDateStr always
-  // uses the device's own local date, matching what the person actually sees on their clock.
-  function localDateStr(d){
-    d = d || new Date();
-    const y = d.getFullYear();
-    const m = String(d.getMonth()+1).padStart(2,'0');
-    const day = String(d.getDate()).padStart(2,'0');
-    return `${y}-${m}-${day}`;
-  }
-  const today = localDateStr();
+  const today = new Date().toISOString().slice(0,10);
   const NS = "atriPhysicsOrbit_";
   const K_GOAL = NS+"dailyGoalHours";
   const K_STREAK = NS+"streakData";
@@ -641,10 +562,6 @@ e.g.
   const K_BADGES = NS+"unlockedBadges";
   const K_ALLTIME = NS+"allTimeSeconds";
   const K_LIVESESSION = NS+"liveSession";
-  // If the app has been frozen/backgrounded/killed for longer than this, we no longer
-  // silently assume that whole gap was "focus time" — we ask the person first. This is
-  // the fix for the bug where hours of background/idle time got silently added to the total.
-  const RESUME_GAP_THRESHOLD_MS = 3*60*1000;
   const K_PRO = NS+"isPro";
   const K_WAKELOCK = NS+"wakeLockOn";
   const K_NOTIFY = NS+"notifyOn";
@@ -654,10 +571,6 @@ e.g.
   const K_THEME = NS+"accentTheme";
   const K_FOCUSMIN = NS+"focusMinutes";
   const K_BREAKMIN = NS+"breakMinutes";
-  const K_EYEBREAK = NS+"eyeBreakOn";
-  const K_APPLOCK = NS+"appLockOn";
-  const K_DISTRACT = NS+"distractionCount_";
-  const K_LOCKMODE = NS+"lockModeOn";
 
   const SUBJECTS = [
     {id:"physics", label:"⚛️ Physics"},
@@ -863,7 +776,6 @@ e.g.
     elapsedMs = Date.now() - startTimestamp;
     renderStopwatch(elapsedMs);
     commitProgress();
-    checkEyeBreak();
   }
 
   function setLiveState(state){
@@ -912,7 +824,6 @@ e.g.
     stopKeepAlive();
     stopLiveStatusNotification();
     elapsedMs = 0;
-    eyeBreakElapsedCheckpoint = 0;
     pomodoroPhase = "focus";
     pomodoroRound = 1;
     renderStopwatch(0);
@@ -934,7 +845,6 @@ e.g.
     startKeepAlive();
     startLiveStatusNotification();
     saveLiveSession();
-    if(isAppLockOn()) requestAppLockFullscreen();
   });
 
   $("pauseBtn").addEventListener("click", ()=>{
@@ -1168,27 +1078,6 @@ e.g.
     $("efficiencyScore").textContent = efficiency+"%";
 
     updateStreak(allSubjTotal, goalSeconds);
-    renderSubjectBreakdown(allSubjTotal);
-  }
-
-  /* ============ SUBJECT BREAKDOWN (TODAY) ============ */
-  function renderSubjectBreakdown(allSubjTotal){
-    const wrap = $("subjectBreakdown");
-    if(!wrap) return;
-    if(allSubjTotal <= 0){ wrap.innerHTML = ""; return; }
-    const rows = SUBJECTS.map(s=>{
-      const sec = getTotalSeconds(s.id);
-      if(sec<=0) return "";
-      const pct = Math.round((sec/allSubjTotal)*100);
-      const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60);
-      const durStr = h>0 ? `${h}h ${m}m` : `${m}m`;
-      return `<div class="flex items-center gap-2 text-[11px]">
-        <span class="w-16 flex-shrink-0 font-semibold text-slate-500">${s.label.split(' ')[0]}</span>
-        <div class="flex-1 h-1.5 rounded-full bg-slate-100 overflow-hidden"><div class="h-full rounded-full" style="width:${pct}%;background:var(--accent,#1E56FC);"></div></div>
-        <span class="mono font-bold text-slate-500 w-16 text-right">${durStr} · ${pct}%</span>
-      </div>`;
-    }).join("");
-    wrap.innerHTML = rows;
   }
 
   /* ============ GOAL SLIDER ============ */
@@ -1213,56 +1102,12 @@ e.g.
 
     const goalMetToday = totalSecToday >= goalSeconds;
     if(goalMetToday && data.lastGoalMetDate !== today){
-      const yesterday = localDateStr(new Date(Date.now()-86400000));
+      const yesterday = new Date(Date.now()-86400000).toISOString().slice(0,10);
       data.count = (data.lastGoalMetDate === yesterday) ? data.count+1 : 1;
       data.lastGoalMetDate = today;
       localStorage.setItem(K_STREAK, JSON.stringify(data));
-      celebrateGoalReached(data.count);
     }
     $("streakCount").textContent = data.count || 0;
-  }
-
-  /* ============ CONFETTI CELEBRATION ============ */
-  function celebrateGoalReached(streakCount){
-    showToast(`🎉 Daily goal smashed! ${streakCount} day streak 🔥`);
-    notifyUser("🎉 Daily Goal Complete!", `You hit your focus goal — streak now ${streakCount} days`);
-    fireConfetti();
-  }
-  function fireConfetti(){
-    const canvas = document.createElement("canvas");
-    canvas.style.cssText = "position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:2000;";
-    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext("2d");
-    const colors = ["#1E56FC","#F59E0B","#10B981","#EF4444","#8B5CF6"];
-    const pieces = Array.from({length:120}, ()=>({
-      x: Math.random()*canvas.width,
-      y: -20 - Math.random()*canvas.height*0.3,
-      w: 6+Math.random()*6,
-      h: 8+Math.random()*8,
-      vy: 2+Math.random()*3,
-      vx: -1.5+Math.random()*3,
-      rot: Math.random()*360,
-      vrot: -6+Math.random()*12,
-      color: colors[Math.floor(Math.random()*colors.length)]
-    }));
-    let frame = 0;
-    function draw(){
-      frame++;
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      pieces.forEach(p=>{
-        p.x += p.vx; p.y += p.vy; p.rot += p.vrot;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot*Math.PI/180);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
-        ctx.restore();
-      });
-      if(frame < 130) requestAnimationFrame(draw);
-      else canvas.remove();
-    }
-    draw();
   }
 
   /* ============ SAVE SESSION ============ */
@@ -1290,30 +1135,15 @@ e.g.
     const emptyMsg = $("emptyLogMsg");
     container.innerHTML = "";
     if(log.length === 0){ container.appendChild(emptyMsg); return; }
-    log.forEach((entry, idx)=>{
+    log.forEach(entry=>{
       const h = Math.floor(entry.duration/3600);
       const m = Math.floor((entry.duration%3600)/60);
       const s = Math.floor(entry.duration%60);
       const durStr = h>0 ? `${h}h ${m}m` : (m>0 ? `${m}m ${s}s` : `${s}s`);
       const row = document.createElement("div");
-      row.className = "fade-in flex items-center justify-between text-xs bg-slate-50 rounded-xl px-3 py-2 border border-slate-100 group";
-      row.innerHTML = `<span class="text-slate-500 font-medium">${entry.time} ${entry.label?('· '+entry.label):''} ${entry.subject||''}</span>
-        <span class="flex items-center gap-2">
-          <span class="font-bold text-[#1E56FC] mono">+${durStr}</span>
-          <button class="log-delete opacity-0 group-hover:opacity-100 text-slate-300 hover:text-red-500 transition-all" data-idx="${idx}" title="Delete entry">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-          </button>
-        </span>`;
+      row.className = "fade-in flex items-center justify-between text-xs bg-slate-50 rounded-xl px-3 py-2 border border-slate-100";
+      row.innerHTML = `<span class="text-slate-500 font-medium">${entry.time} ${entry.label?('· '+entry.label):''} ${entry.subject||''}</span><span class="font-bold text-[#1E56FC] mono">+${durStr}</span>`;
       container.appendChild(row);
-    });
-    container.querySelectorAll(".log-delete").forEach(btn=>{
-      btn.addEventListener("click", (e)=>{
-        const i = parseInt(e.currentTarget.dataset.idx);
-        const log2 = getLog();
-        log2.splice(i,1);
-        localStorage.setItem(logKey(), JSON.stringify(log2));
-        renderLog();
-      });
     });
   }
   $("clearLogBtn").addEventListener("click", ()=>{
@@ -1410,7 +1240,7 @@ e.g.
     const labels = [], values = [];
     for(let i=6;i>=0;i--){
       const d = new Date(Date.now() - i*86400000);
-      const dStr = localDateStr(d);
+      const dStr = d.toISOString().slice(0,10);
       labels.push(d.toLocaleDateString('en-IN',{weekday:'short'}));
       let totalForDay = 0;
       SUBJECTS.forEach(s=>{
@@ -1607,7 +1437,6 @@ e.g.
   function closeModal(id){ $(id).classList.remove("open"); }
   $("badgesBtn").addEventListener("click", ()=>{ renderBadgesModal(); openModal("badgesModal"); });
   $("formulaBtn").addEventListener("click", ()=>{ renderFlashcards(); openModal("formulaModal"); });
-  $("historyBtn").addEventListener("click", ()=>{ renderHistoryModal(); openModal("historyModal"); });
   document.querySelectorAll(".closeModalBtn").forEach(btn=>{
     btn.addEventListener("click", ()=> closeModal(btn.dataset.modal));
   });
@@ -1692,46 +1521,26 @@ e.g.
   function saveLiveSession(){
     const note = $("sessionNoteInput") ? $("sessionNoteInput").value : "";
     if(running){
-      localStorage.setItem(K_LIVESESSION, JSON.stringify({ running:true, startTimestamp: Date.now()-elapsedMs, lastPing: Date.now(), mode:timerMode, phase:pomodoroPhase, round:pomodoroRound, sessionCommittedSec, laps, note }));
+      localStorage.setItem(K_LIVESESSION, JSON.stringify({ running:true, startTimestamp: Date.now()-elapsedMs, mode:timerMode, phase:pomodoroPhase, round:pomodoroRound, sessionCommittedSec, laps, note }));
     } else if(elapsedMs > 0){
-      localStorage.setItem(K_LIVESESSION, JSON.stringify({ running:false, elapsedMs, lastPing: Date.now(), mode:timerMode, phase:pomodoroPhase, round:pomodoroRound, sessionCommittedSec, laps, note }));
+      localStorage.setItem(K_LIVESESSION, JSON.stringify({ running:false, elapsedMs, mode:timerMode, phase:pomodoroPhase, round:pomodoroRound, sessionCommittedSec, laps, note }));
     } else {
       localStorage.removeItem(K_LIVESESSION);
     }
   }
   window.addEventListener("beforeunload", saveLiveSession);
   window.addEventListener("pagehide", saveLiveSession);
-
-  // Asks the person whether a chunk of background/frozen time should count as focus time,
-  // instead of silently adding it. Shifts startTimestamp forward to exclude the gap if declined.
-  function confirmGapOrDiscard(gapMs){
-    const gapMin = Math.max(1, Math.round(gapMs/60000));
-    const include = confirm(`⏱️ App ${gapMin} min tak background/band tha.\n\nKya yeh samay bhi Focus Time mein jodu?\n\nOK = Haan, jodo\nCancel = Nahi, hata do (sirf active padhai ginno)`);
-    if(!include){
-      elapsedMs -= gapMs;
-      if(elapsedMs < 0) elapsedMs = 0;
-      startTimestamp = Date.now() - elapsedMs;
-      showToast("Background time hata diya — sirf real study time gina 👍");
-    }
-  }
-
   document.addEventListener("visibilitychange", ()=>{
     if(document.hidden){
       saveLiveSession();
     } else if(running){
-      let saved = null;
-      try{ saved = JSON.parse(localStorage.getItem(K_LIVESESSION) || "null"); }catch(e){}
-      const lastPing = (saved && saved.lastPing) || startTimestamp;
-      const gapMs = Date.now() - lastPing;
       // Resync immediately on return — corrects for any background throttling/drift.
       elapsedMs = Date.now() - startTimestamp;
-      if(gapMs > RESUME_GAP_THRESHOLD_MS) confirmGapOrDiscard(gapMs);
       renderStopwatch(elapsedMs);
       commitProgress();
       requestWakeLock();
       startKeepAlive();
       if(audioCtx && audioCtx.state === "suspended") audioCtx.resume().catch(()=>{});
-      saveLiveSession();
     }
   });
   setInterval(()=>{ if(running) saveLiveSession(); }, 3000);
@@ -1751,11 +1560,6 @@ e.g.
         elapsedMs = Date.now() - saved.startTimestamp;
         running = true;
         startTimestamp = saved.startTimestamp;
-
-        const lastPing = saved.lastPing || saved.startTimestamp;
-        const gapMs = Date.now() - lastPing;
-        if(gapMs > RESUME_GAP_THRESHOLD_MS) confirmGapOrDiscard(gapMs);
-
         clearInterval(intervalId);
         intervalId = setInterval(tick, 200);
         renderStopwatch(elapsedMs);
@@ -1855,11 +1659,6 @@ e.g.
   });
 
   /* ============ FOCUS MODE ============ */
-  let distractionCount = 0;
-  let awayWhileLocked = false;
-
-  function isLocked(){ return localStorage.getItem(K_LOCKMODE) === "1"; }
-
   function enterFocusMode(){
     if(!isPro()){ showToast("Turn on Pro Mode in Settings to unlock Focus Mode ⚡"); openModal("settingsModal"); return; }
     $("focusOverlay").classList.remove("hidden");
@@ -1868,90 +1667,14 @@ e.g.
     $("focusPauseBtn").textContent = running ? "Pause" : "Start";
     renderStopwatch(elapsedMs);
     if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(()=>{});
-    distractionCount = 0;
-    $("lockModeSwitch").classList.toggle("on", isLocked());
-    $("lockReminderBadge").classList.toggle("hidden", !isLocked());
   }
-
-  function reallyExitFocus(){
-    $("focusOverlay").classList.add("hidden");
-    $("distractionOverlay").classList.add("hidden");
-    if(document.exitFullscreen && document.fullscreenElement) document.exitFullscreen().catch(()=>{});
-    // Reward: a random motivational quote on the way out.
-    const quote = QUOTES[Math.floor(Math.random()*QUOTES.length)];
-    showToast(`✅ Session ended — ${quote}`);
-    notifyUser("⚛️ Focus Session Ended", quote);
-  }
-
   function exitFocusMode(){
     if($("focusOverlay").classList.contains("hidden")) return;
-    if(!isLocked()){ reallyExitFocus(); return; }
-    // Locked: handled entirely by the hold-to-exit press logic below, ignore plain clicks.
+    $("focusOverlay").classList.add("hidden");
+    if(document.exitFullscreen && document.fullscreenElement) document.exitFullscreen().catch(()=>{});
   }
-
   $("focusModeBtn").addEventListener("click", enterFocusMode);
-
-  // Hold-to-exit: must hold the Exit button for 1.5s while locked, otherwise a normal click exits instantly.
-  let holdTimer = null, holdStart = 0;
-  const HOLD_MS = 1500;
-  function startHold(){
-    if(!isLocked()){ return; } // unlocked: click handler below exits immediately
-    holdStart = Date.now();
-    $("exitFocusHoldBar").style.transition = `transform ${HOLD_MS}ms linear`;
-    $("exitFocusHoldBar").style.transform = "scaleX(1)";
-    holdTimer = setTimeout(()=>{ reallyExitFocus(); resetHoldBar(); }, HOLD_MS);
-  }
-  function cancelHold(){
-    clearTimeout(holdTimer);
-    resetHoldBar();
-  }
-  function resetHoldBar(){
-    $("exitFocusHoldBar").style.transition = "none";
-    $("exitFocusHoldBar").style.transform = "scaleX(0)";
-  }
   $("exitFocusBtn").addEventListener("click", exitFocusMode);
-  $("exitFocusBtn").addEventListener("pointerdown", startHold);
-  $("exitFocusBtn").addEventListener("pointerup", cancelHold);
-  $("exitFocusBtn").addEventListener("pointerleave", cancelHold);
-
-  $("lockModeSwitch").addEventListener("click", ()=>{
-    const on = !$("lockModeSwitch").classList.contains("on");
-    setSwitch2("lockModeSwitch", K_LOCKMODE, on);
-    $("lockReminderBadge").classList.toggle("hidden", !on);
-    $("exitFocusLabel").textContent = on ? "Hold to Exit" : "Exit Focus";
-    showToast(on ? "🔒 Lock Mode ON — hold Exit 1.5s to leave" : "🔓 Lock Mode off");
-  });
-  function setSwitch2(id, key, on){ $(id).classList.toggle("on", on); localStorage.setItem(key, on?"1":"0"); }
-  $("exitFocusLabel").textContent = isLocked() ? "Hold to Exit" : "Exit Focus";
-
-  $("resumeFocusBtn").addEventListener("click", ()=>{
-    $("distractionOverlay").classList.add("hidden");
-    awayWhileLocked = false;
-    if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(()=>{});
-  });
-
-  // Best-effort distraction detection: a browser tab genuinely cannot be forced to stay open —
-  // but while Lock Mode is on we track every time you leave and greet you with a blocking
-  // reminder screen (and a nudge notification) the moment you come back.
-  document.addEventListener("visibilitychange", ()=>{
-    if(!isLocked() || $("focusOverlay").classList.contains("hidden")) return;
-    if(document.hidden){
-      awayWhileLocked = true;
-      notifyUser("🔒 Focus Lock", "Aap focus session se bahar chale gaye — wapas aao!");
-    } else if(awayWhileLocked){
-      distractionCount++;
-      $("distractionCountText").textContent = `Distractions this session: ${distractionCount}`;
-      $("distractionOverlay").classList.remove("hidden");
-    }
-  });
-
-  window.addEventListener("beforeunload", (e)=>{
-    if(isLocked() && running && !$("focusOverlay").classList.contains("hidden")){
-      e.preventDefault();
-      e.returnValue = "";
-    }
-  });
-
   $("focusPauseBtn").addEventListener("click", ()=>{
     running ? $("pauseBtn").click() : $("startBtn").click();
     $("focusPauseBtn").textContent = running ? "Pause" : "Start";
@@ -2009,104 +1732,6 @@ e.g.
     applyDarkMode(shouldBeDark);
   }
   setInterval(checkAutoDarkMode, 5*60*1000);
-
-  /* ============ 20-20-20 EYE BREAK REMINDER ============ */
-  $("eyeBreakSwitch").classList.toggle("on", localStorage.getItem(K_EYEBREAK)==="1");
-  $("eyeBreakSwitch").addEventListener("click", ()=>{
-    setSwitch("eyeBreakSwitch", K_EYEBREAK, !$("eyeBreakSwitch").classList.contains("on"));
-  });
-  let eyeBreakElapsedCheckpoint = 0;
-  function checkEyeBreak(){
-    if(localStorage.getItem(K_EYEBREAK) !== "1") return;
-    if(!running || timerMode!=="stopwatch") return;
-    const twentyMin = 20*60*1000;
-    if(elapsedMs - eyeBreakElapsedCheckpoint >= twentyMin){
-      eyeBreakElapsedCheckpoint = elapsedMs;
-      showToast("👀 Eye Break: Look 20 feet away for 20 seconds");
-      notifyUser("👀 20-20-20 Eye Break", "Look at something 20 feet away for 20 seconds");
-    }
-  }
-
-  /* ============ APP LOCK MODE ============ */
-  // Best-effort "can't leave until you turn it off" — browsers never let a page truly trap
-  // the user, but this combines a fullscreen nudge, a native "are you sure you want to leave?"
-  // prompt, and a distraction counter so leaving/switching away is tracked and discouraged.
-  function isAppLockOn(){ return localStorage.getItem(K_APPLOCK) === "1"; }
-  function distractKey(){ return K_DISTRACT+today; }
-  function getDistractCount(){ return parseInt(localStorage.getItem(distractKey())||"0"); }
-
-  function updateAppLockBtn(){
-    const on = isAppLockOn();
-    $("appLockLabel").textContent = "App Lock: " + (on ? "On 🔒" : "Off");
-    $("appLockBtn").classList.toggle("btn-primary", on);
-    $("appLockBtn").classList.toggle("btn-secondary", !on);
-  }
-
-  $("appLockBtn").addEventListener("click", ()=>{
-    const turningOn = !isAppLockOn();
-    localStorage.setItem(K_APPLOCK, turningOn ? "1":"0");
-    updateAppLockBtn();
-    if(turningOn){
-      showToast("🔒 App Lock ON — start your timer, don't switch away!");
-      requestAppLockFullscreen();
-    } else {
-      exitAppLockFullscreen();
-      $("appLockOverlay").classList.add("hidden");
-      fireMotivationQuote();
-    }
-  });
-
-  function fireMotivationQuote(){
-    const q = QUOTES[Math.floor(Math.random()*QUOTES.length)];
-    showToast("🔓 App Lock off — "+q);
-    notifyUser("🔓 App Lock Off", q);
-  }
-
-  function requestAppLockFullscreen(){
-    try{
-      const el = document.documentElement;
-      if(el.requestFullscreen) el.requestFullscreen().catch(()=>{});
-      else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-    }catch(e){}
-  }
-  function exitAppLockFullscreen(){
-    try{
-      if(document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(()=>{});
-      else if(document.webkitFullscreenElement && document.webkitExitFullscreen) document.webkitExitFullscreen();
-    }catch(e){}
-  }
-
-  document.addEventListener("fullscreenchange", ()=>{
-    if(isAppLockOn() && !document.fullscreenElement){
-      $("appLockOverlay").classList.remove("hidden");
-    }
-  });
-  $("reenterFocusBtn").addEventListener("click", ()=>{
-    $("appLockOverlay").classList.add("hidden");
-    requestAppLockFullscreen();
-  });
-
-  window.addEventListener("beforeunload", (e)=>{
-    if(isAppLockOn()){
-      e.preventDefault();
-      e.returnValue = "App Lock is ON — turn it off first if you want to leave. Leave anyway?";
-      return e.returnValue;
-    }
-  });
-
-  document.addEventListener("visibilitychange", ()=>{
-    if(!isAppLockOn() || !running) return;
-    if(document.hidden){
-      const n = getDistractCount()+1;
-      localStorage.setItem(distractKey(), String(n));
-    } else {
-      const n = getDistractCount();
-      if(n>0) showToast(`🔒 Wapas aa gaye! Aaj ke distractions: ${n}`);
-      $("appLockOverlay").classList.add("hidden");
-    }
-  });
-
-  updateAppLockBtn();
 
   /* ============ ACCENT THEME PICKER ============ */
   const THEMES = [
@@ -2194,60 +1819,6 @@ e.g.
     reader.readAsText(file);
   });
 
-  /* ============ FIX TODAY'S TOTAL (manual correction) ============ */
-  $("editTodayBtn").addEventListener("click", ()=>{
-    const subj = SUBJECTS.find(s=>s.id===activeSubject);
-    const currentSec = getTotalSeconds(activeSubject);
-    const currentH = (currentSec/3600).toFixed(2);
-    const input = prompt(`${subj?subj.label:activeSubject} ke liye aaj ka SAHI total time ghanton mein daalo (e.g. 1.5 = 1h 30m):`, currentH);
-    if(input === null) return;
-    const hours = parseFloat(input);
-    if(isNaN(hours) || hours < 0){ showToast("Invalid number ❌"); return; }
-    localStorage.setItem(dayKey(activeSubject), String(Math.round(hours*3600)));
-    renderDashboard();
-    renderWeeklyChart();
-    renderHeatmap();
-    renderStatsSummary();
-    showToast("Aaj ka total sahi kar diya ✅");
-  });
-  $("resetTodayBtn").addEventListener("click", ()=>{
-    const subj = SUBJECTS.find(s=>s.id===activeSubject);
-    if(!confirm(`${subj?subj.label:activeSubject} ke liye aaj ka poora time 0 kar du? Ye undo nahi ho sakta.`)) return;
-    localStorage.setItem(dayKey(activeSubject), "0");
-    renderDashboard();
-    renderWeeklyChart();
-    renderHeatmap();
-    renderStatsSummary();
-    showToast("Aaj ka time reset ho gaya ✅");
-  });
-
-  /* ============ SHARE PROGRESS ============ */
-  $("shareBtn").addEventListener("click", async ()=>{
-    const allSubjTotal = getAllSubjectsTotalToday();
-    const h = Math.floor(allSubjTotal/3600), m = Math.floor((allSubjTotal%3600)/60);
-    let streakData;
-    try{ streakData = JSON.parse(localStorage.getItem(K_STREAK) || "{}"); }catch(e){ streakData = {}; }
-    const streak = streakData.count || 0;
-    const quests = getQuests();
-    const questDone = quests.filter(q=>q.done).length;
-    const subjLines = SUBJECTS.map(s=>{
-      const sec = getTotalSeconds(s.id);
-      if(sec<=0) return null;
-      const sh = Math.floor(sec/3600), sm = Math.floor((sec%3600)/60);
-      return `${s.label}: ${sh>0?sh+'h ':''}${sm}m`;
-    }).filter(Boolean).join("\n");
-    const text = `⚛️ Atri's Physics Orbit — Study Update\n\n📅 ${new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}\n⏱️ Total Focus Today: ${h}h ${m}m\n🔥 Streak: ${streak} day(s)\n✅ Quests done: ${questDone}/${quests.length}\n${subjLines?"\n"+subjLines:""}\n\nTracked with Atri's Physics Orbit Stopwatch ⚛️`;
-    if(navigator.share){
-      try{ await navigator.share({ text, title:"My Physics Orbit Progress" }); return; }catch(e){ /* fall through to clipboard if cancelled/unsupported */ }
-    }
-    try{
-      await navigator.clipboard.writeText(text);
-      showToast("Progress copied — paste it anywhere to share 📋");
-    }catch(e){
-      showToast("Couldn't copy — try again");
-    }
-  });
-
   /* ============ STATS SUMMARY ============ */
   function renderStatsSummary(){
     const grid = $("statsSummaryGrid");
@@ -2255,7 +1826,7 @@ e.g.
     let weekTotal = 0, best = 0, bestDay = "";
     for(let i=0;i<7;i++){
       const d = new Date(Date.now()-i*86400000);
-      const dStr = localDateStr(d);
+      const dStr = d.toISOString().slice(0,10);
       let dayTotal = 0;
       SUBJECTS.forEach(s=> dayTotal += parseFloat(localStorage.getItem(NS+"totalSeconds_"+dStr+"_"+s.id)||"0"));
       weekTotal += dayTotal;
@@ -2279,53 +1850,6 @@ e.g.
         <div class="text-lg font-extrabold mono">${c.value}</div>
         <div class="text-[10px] font-bold uppercase text-slate-400 tracking-wide mt-1">${c.label}</div>
       </div>`).join("");
-  }
-
-  /* ============ STUDY HISTORY (ALL PAST DAYS) ============ */
-  // Every day's totals live permanently in localStorage under totalSeconds_<date>_<subject> —
-  // closing the app, the browser, or the whole phone never erases this; it's only ever
-  // cleared if the person clears their browser storage for this site.
-  function renderHistoryModal(){
-    const dayMap = {}; // dateStr -> { total, bySubject: {} }
-    for(let i=0;i<localStorage.length;i++){
-      const key = localStorage.key(i);
-      if(!key || !key.startsWith(NS+"totalSeconds_")) continue;
-      const rest = key.slice((NS+"totalSeconds_").length); // "YYYY-MM-DD_subjid"
-      const idx = rest.lastIndexOf("_");
-      if(idx === -1) continue;
-      const dateStr = rest.slice(0, idx);
-      const subjId = rest.slice(idx+1);
-      const sec = parseFloat(localStorage.getItem(key)||"0");
-      if(sec<=0) continue;
-      if(!dayMap[dateStr]) dayMap[dateStr] = { total:0, bySubject:{} };
-      dayMap[dateStr].total += sec;
-      dayMap[dateStr].bySubject[subjId] = (dayMap[dateStr].bySubject[subjId]||0) + sec;
-    }
-    const dates = Object.keys(dayMap).sort((a,b)=> b.localeCompare(a));
-    const list = $("historyList");
-    if(dates.length === 0){
-      list.innerHTML = `<p class="text-slate-400 text-xs text-center py-6">Abhi tak koi study data nahi mila. Timer start karke padhna shuru karo! ⚛️</p>`;
-      return;
-    }
-    list.innerHTML = dates.map(dateStr=>{
-      const d = new Date(dateStr+"T00:00:00");
-      const dayLabel = d.toLocaleDateString('en-IN',{weekday:'short', day:'numeric', month:'short'});
-      const totalSec = dayMap[dateStr].total;
-      const h = Math.floor(totalSec/3600), m = Math.floor((totalSec%3600)/60);
-      let topSubj = "-", topSec = 0;
-      Object.keys(dayMap[dateStr].bySubject).forEach(sid=>{
-        if(dayMap[dateStr].bySubject[sid] > topSec){ topSec = dayMap[dateStr].bySubject[sid]; topSubj = sid; }
-      });
-      const subjObj = SUBJECTS.find(s=>s.id===topSubj);
-      const isToday = dateStr === today;
-      return `<div class="flex items-center justify-between px-3 py-2.5 rounded-xl border ${isToday?'border-blue-200 bg-blue-50':'border-slate-100 bg-slate-50'}">
-        <div>
-          <div class="text-xs font-bold text-slate-700">${dayLabel}${isToday?' · Today':''}</div>
-          <div class="text-[10px] text-slate-400">Top: ${subjObj ? subjObj.label : '—'}</div>
-        </div>
-        <div class="font-extrabold mono text-sm text-[#1E56FC]">${h}h ${m}m</div>
-      </div>`;
-    }).join("");
   }
 
   /* ============ MIDNIGHT ROLLOVER ============ */
